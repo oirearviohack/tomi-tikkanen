@@ -2,7 +2,7 @@
 
 ## Mistä on kyse
 Eturauhastutka-palvelun avulla ihmiset voivat kuvailla eturauhasongelmiin liittyviä oireita ja saavat terveydenhuollon ammattilaisten hyväksymiä vastauksia oireisiinsa.
-Erona tavallsiin ODA oirearvioihin on visualisoitu vastaus sekä muistute asiakkaalle mikäli tapaus on ollut raja-arvona.
+Erona tavallisiin ODA oirearvioihin on visualisoitu vastaus sekä muistute asiakkaalle mikäli tapaus on ollut raja-arvona.
 
 ## Tiimin jäsenet
 Arja Ranta-aho
