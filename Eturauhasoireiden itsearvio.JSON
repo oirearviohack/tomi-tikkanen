@@ -1,0 +1,1866 @@
+This result is being rendered in HTML for easy viewing. You may access this content as Raw JSON or Raw XML, or view this content in HTML JSON or HTML XML. Response generated in 12ms.
+{
+  "resourceType": "Questionnaire",
+  "id": "3710",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": "2017-05-06T13:52:27.987+03:00"
+  },
+  "language": "fi",
+  "text": {
+    "status": "generated"
+  },
+  "url": "https://www.ebmeds.org/form/api/FHIR/forms/export/149",
+  "identifier": [
+    {
+      "system": "https://www.ebmeds.org/form/api/FHIR/forms/export/149",
+      "value": "149"
+    }
+  ],
+  "title": "Eturauhasoireiden itsearvio",
+  "status": "active",
+  "date": "2017-05-06T10:45:08.205Z",
+  "publisher": "© Kustannus Oy Duodecim, 2017",
+  "item": [
+    {
+      "linkId": "introduction",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "750",
+          "text": "Sukupuoli",
+          "type": "choice",
+          "required": true,
+          "repeats": false,
+          "option": [
+            {
+              "valueCoding": {
+                "id": "1390",
+                "display": "Mies"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1391",
+                "display": "Nainen"
+              }
+            }
+          ]
+        },
+        {
+          "extension": [
+            {
+              "url": "answer_type",
+              "valueString": "feedback"
+            }
+          ],
+          "linkId": "778",
+          "text": "Tämä kysely koskee eturauhasen liikakasvua ja on tarkoitettu vain miehille.",
+          "type": "display",
+          "enableWhen": [
+            {
+              "question": "750",
+              "answerString": "Nainen"
+            }
+          ],
+          "required": true
+        },
+        {
+          "linkId": "749",
+          "text": "Ikä",
+          "type": "decimal",
+          "enableWhen": [
+            {
+              "question": "750",
+              "answerString": "Mies"
+            }
+          ],
+          "required": true
+        },
+        {
+          "extension": [
+            {
+              "url": "answer_type",
+              "valueString": "feedback"
+            }
+          ],
+          "linkId": "779",
+          "text": "Tämä oirearviokysely on tarkoitettu 15-100 -vuotiaille miehille.",
+          "type": "display",
+          "enableWhen": [
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "750",
+              "answerString": "Mies"
+            },
+            {
+              "question": "749",
+              "answerQuantity": {
+                "value": 15,
+                "comparator": "<"
+              }
+            },
+            {
+              "question": "749",
+              "answerQuantity": {
+                "value": 100,
+                "comparator": ">"
+              }
+            }
+          ],
+          "required": true
+        },
+        {
+          "linkId": "751",
+          "text": "Onko lähisukusi miehillä (esimerkiksi isällä tai veljellä) todettu eturauhassyöpää?",
+          "type": "choice",
+          "enableWhen": [
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "750",
+              "answerString": "Mies"
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "749",
+              "answerQuantity": {
+                "value": 14,
+                "comparator": ">"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "749",
+              "answerQuantity": {
+                "value": 101,
+                "comparator": "<"
+              }
+            }
+          ],
+          "required": true,
+          "repeats": false,
+          "option": [
+            {
+              "valueCoding": {
+                "id": "1281",
+                "display": "Kyllä"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1282",
+                "display": "Ei"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1389",
+                "display": "En tiedä"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "752",
+          "text": "Täytyykö virtsaamisen alkamista odottaa?",
+          "type": "choice",
+          "enableWhen": [
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "750",
+              "answerString": "Mies"
+            },
+            {
+              "question": "751",
+              "answerString": "Kyllä"
+            },
+            {
+              "question": "751",
+              "answerString": "Ei"
+            },
+            {
+              "question": "751",
+              "answerString": "En tiedä"
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "749",
+              "answerQuantity": {
+                "value": 14,
+                "comparator": ">"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "749",
+              "answerQuantity": {
+                "value": 101,
+                "comparator": "<"
+              }
+            }
+          ],
+          "required": true,
+          "repeats": false,
+          "option": [
+            {
+              "valueCoding": {
+                "id": "1287",
+                "display": "Ei koskaan"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1288",
+                "display": "Harvoin"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1289",
+                "display": "Usein"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1290",
+                "display": "Aina"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "753",
+          "text": "Kuinka paljon virtsaamisen alkamisen odottamisesta on Teille haittaa?",
+          "type": "choice",
+          "enableWhen": [
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "750",
+              "answerString": "Mies"
+            },
+            {
+              "question": "752",
+              "answerString": "Harvoin"
+            },
+            {
+              "question": "752",
+              "answerString": "Usein"
+            },
+            {
+              "question": "752",
+              "answerString": "Aina"
+            }
+          ],
+          "required": true,
+          "repeats": false,
+          "option": [
+            {
+              "valueCoding": {
+                "id": "1291",
+                "display": "Ei lainkaan"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1292",
+                "display": "Vähän"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1293",
+                "display": "Kohtalaisesti"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1294",
+                "display": "Hyvin paljon"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "754",
+          "text": "Tuleeko virtsa omasta mielestänne:",
+          "type": "choice",
+          "enableWhen": [
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "750",
+              "answerString": "Mies"
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "749",
+              "answerQuantity": {
+                "value": 14,
+                "comparator": ">"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "749",
+              "answerQuantity": {
+                "value": 101,
+                "comparator": "<"
+              }
+            },
+            {
+              "question": "751",
+              "answerString": "Kyllä"
+            },
+            {
+              "question": "751",
+              "answerString": "Ei"
+            },
+            {
+              "question": "751",
+              "answerString": "En tiedä"
+            }
+          ],
+          "required": true,
+          "repeats": false,
+          "option": [
+            {
+              "valueCoding": {
+                "id": "1295",
+                "display": "Normaalisti"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1296",
+                "display": "Heikosti"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1297",
+                "display": "Hyvin heikosti"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1298",
+                "display": "Tipoittain"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "755",
+          "text": "Kuinka paljon heikosta virtsantulosta on Teille haittaa?",
+          "type": "choice",
+          "enableWhen": [
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "750",
+              "answerString": "Mies"
+            },
+            {
+              "question": "754",
+              "answerString": "Heikosti"
+            },
+            {
+              "question": "754",
+              "answerString": "Hyvin heikosti"
+            },
+            {
+              "question": "754",
+              "answerString": "Tipoittain"
+            }
+          ],
+          "required": true,
+          "repeats": false,
+          "option": [
+            {
+              "valueCoding": {
+                "id": "1299",
+                "display": "Ei lainkaan"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1300",
+                "display": "Vähän"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1301",
+                "display": "Kohtalaisesti"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1302",
+                "display": "Hyvin paljon"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "756",
+          "text": "Tuntuuko, että virtsatessanne rakko tyhjenee täysin?",
+          "type": "choice",
+          "enableWhen": [
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "750",
+              "answerString": "Mies"
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "749",
+              "answerQuantity": {
+                "value": 14,
+                "comparator": ">"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "749",
+              "answerQuantity": {
+                "value": 101,
+                "comparator": "<"
+              }
+            },
+            {
+              "question": "751",
+              "answerString": "Kyllä"
+            },
+            {
+              "question": "751",
+              "answerString": "Ei"
+            },
+            {
+              "question": "751",
+              "answerString": "En tiedä"
+            }
+          ],
+          "required": true,
+          "repeats": false,
+          "option": [
+            {
+              "valueCoding": {
+                "id": "1303",
+                "display": "Aina"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1304",
+                "display": "Usein"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1305",
+                "display": "Harvoin"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1306",
+                "display": "Ei koskaan"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "757",
+          "text": "Kuinka paljon rakon tyhjentymättä jäämisestä on Teille haittaa?",
+          "type": "choice",
+          "enableWhen": [
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "750",
+              "answerString": "Mies"
+            },
+            {
+              "question": "756",
+              "answerString": "Usein"
+            },
+            {
+              "question": "756",
+              "answerString": "Ei koskaan"
+            },
+            {
+              "question": "756",
+              "answerString": "Harvoin"
+            }
+          ],
+          "required": true,
+          "repeats": false,
+          "option": [
+            {
+              "valueCoding": {
+                "id": "1307",
+                "display": "Ei lainkaan"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1308",
+                "display": "Vähän"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1309",
+                "display": "Kohtalaisesti"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1310",
+                "display": "Hyvin paljon"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "758",
+          "text": "Joudutteko ponnistamaan virtsaamisen aloittamiseksi ja/tai jatkamiseksi?",
+          "type": "choice",
+          "enableWhen": [
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "750",
+              "answerString": "Mies"
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "749",
+              "answerQuantity": {
+                "value": 14,
+                "comparator": ">"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "749",
+              "answerQuantity": {
+                "value": 101,
+                "comparator": "<"
+              }
+            },
+            {
+              "question": "751",
+              "answerString": "Kyllä"
+            },
+            {
+              "question": "751",
+              "answerString": "Ei"
+            },
+            {
+              "question": "751",
+              "answerString": "En tiedä"
+            }
+          ],
+          "required": true,
+          "repeats": false,
+          "option": [
+            {
+              "valueCoding": {
+                "id": "1311",
+                "display": "Ei koskaan"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1312",
+                "display": "Harvoin"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1313",
+                "display": "Usein"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1314",
+                "display": "Aina"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "762",
+          "text": "Mikä on pisin aika kahden virtsaamisen välillä noustuanne aamulla ylös ja ennen kuin menette illalla nukkumaan?",
+          "type": "choice",
+          "enableWhen": [
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "750",
+              "answerString": "Mies"
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "749",
+              "answerQuantity": {
+                "value": 14,
+                "comparator": ">"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "749",
+              "answerQuantity": {
+                "value": 101,
+                "comparator": "<"
+              }
+            },
+            {
+              "question": "751",
+              "answerString": "Kyllä"
+            },
+            {
+              "question": "751",
+              "answerString": "Ei"
+            },
+            {
+              "question": "751",
+              "answerString": "En tiedä"
+            }
+          ],
+          "required": true,
+          "repeats": false,
+          "option": [
+            {
+              "valueCoding": {
+                "id": "1327",
+                "display": "Yli 3 tuntia"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1328",
+                "display": "2-3 tuntia"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1329",
+                "display": "1-2 tuntia"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1330",
+                "display": "Alle tunnin"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "759",
+          "text": "Kuinka paljon virtsaamisen ponnistamisesta on Teille haittaa?",
+          "type": "choice",
+          "enableWhen": [
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "750",
+              "answerString": "Mies"
+            },
+            {
+              "question": "758",
+              "answerString": "Harvoin"
+            },
+            {
+              "question": "758",
+              "answerString": "Usein"
+            },
+            {
+              "question": "758",
+              "answerString": "Aina"
+            }
+          ],
+          "required": true,
+          "repeats": false,
+          "option": [
+            {
+              "valueCoding": {
+                "id": "1315",
+                "display": "Ei lainkaan"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1316",
+                "display": "Vähän"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1317",
+                "display": "Kohtalaisesti"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1318",
+                "display": "Hyvin paljon"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "760",
+          "text": "Tippuuko virtsaa vielä, vaikka luulitte virtsaamisen loppuneen (jälkitippuminen)?",
+          "type": "choice",
+          "enableWhen": [
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "750",
+              "answerString": "Mies"
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "749",
+              "answerQuantity": {
+                "value": 14,
+                "comparator": ">"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "749",
+              "answerQuantity": {
+                "value": 101,
+                "comparator": ">"
+              }
+            },
+            {
+              "question": "751",
+              "answerString": "Kyllä"
+            },
+            {
+              "question": "751",
+              "answerString": "Ei"
+            },
+            {
+              "question": "751",
+              "answerString": "En tiedä"
+            }
+          ],
+          "required": true,
+          "repeats": false,
+          "option": [
+            {
+              "valueCoding": {
+                "id": "1319",
+                "display": "Ei koskaan"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1320",
+                "display": "Kyllä, WC:ssä"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1321",
+                "display": "Hieman alushousuihin"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1322",
+                "display": "Runsaasti alushousuihin"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "764",
+          "text": "Kuinka monta kertaa joudutte virtsaamaan yön aikana?",
+          "type": "choice",
+          "enableWhen": [
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "750",
+              "answerString": "Mies"
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "749",
+              "answerQuantity": {
+                "value": 14,
+                "comparator": ">"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "749",
+              "answerQuantity": {
+                "value": 101,
+                "comparator": "<"
+              }
+            },
+            {
+              "question": "751",
+              "answerString": "Kyllä"
+            },
+            {
+              "question": "751",
+              "answerString": "Ei"
+            },
+            {
+              "question": "751",
+              "answerString": "En tiedä"
+            }
+          ],
+          "required": true,
+          "repeats": false,
+          "option": [
+            {
+              "valueCoding": {
+                "id": "1335",
+                "display": "0 kertaa"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1336",
+                "display": "1-2 kertaa"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1337",
+                "display": "3-4 kertaa"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1338",
+                "display": "5 kertaa tai useammin"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "761",
+          "text": "Kuinka paljon virtsan jälkitippumisesta on Teille haittaa?",
+          "type": "choice",
+          "enableWhen": [
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "750",
+              "answerString": "Mies"
+            },
+            {
+              "question": "760",
+              "answerString": "Kyllä, WC:ssä"
+            },
+            {
+              "question": "760",
+              "answerString": "Hieman alushousuihin"
+            },
+            {
+              "question": "760",
+              "answerString": "Runsaasti alushousuihin"
+            }
+          ],
+          "required": true,
+          "repeats": false,
+          "option": [
+            {
+              "valueCoding": {
+                "id": "1323",
+                "display": "Ei lainkaan"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1324",
+                "display": "Vähän"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1325",
+                "display": "Kohtalaisesti"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1326",
+                "display": "Hyvin paljon"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "763",
+          "text": "Kuinka paljon tihentyneestä virtsaamistarpeesta on Teille haittaa?",
+          "type": "choice",
+          "enableWhen": [
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "750",
+              "answerString": "Mies"
+            },
+            {
+              "question": "762",
+              "answerString": "2-3 tuntia"
+            },
+            {
+              "question": "762",
+              "answerString": "1-2 tuntia"
+            },
+            {
+              "question": "762",
+              "answerString": "Alle tunnin"
+            }
+          ],
+          "required": true,
+          "repeats": false,
+          "option": [
+            {
+              "valueCoding": {
+                "id": "1331",
+                "display": "Ei lainkaan"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1332",
+                "display": "Vähän"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1333",
+                "display": "Kohtalaisesti"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1334",
+                "display": "Hyvin paljon"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "765",
+          "text": "Kuinka paljon yön aikana virtsalla käymisestä on Teille haittaa?",
+          "type": "choice",
+          "enableWhen": [
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "750",
+              "answerString": "Mies"
+            },
+            {
+              "question": "764",
+              "answerString": "1-2 kertaa"
+            },
+            {
+              "question": "764",
+              "answerString": "3-4 kertaa"
+            },
+            {
+              "question": "764",
+              "answerString": "5 kertaa tai useammin"
+            }
+          ],
+          "required": true,
+          "repeats": false,
+          "option": [
+            {
+              "valueCoding": {
+                "id": "1339",
+                "display": "Ei lainkaan"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1340",
+                "display": "Vähän"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1341",
+                "display": "Kohtalaisesti"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1342",
+                "display": "Hyvin paljon"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "766",
+          "text": "Tuleeko Teille äkillinen virtsaamistarve?",
+          "type": "choice",
+          "enableWhen": [
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "750",
+              "answerString": "Mies"
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "749",
+              "answerQuantity": {
+                "value": 14,
+                "comparator": ">"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "749",
+              "answerQuantity": {
+                "value": 101,
+                "comparator": ">"
+              }
+            },
+            {
+              "question": "751",
+              "answerString": "Kyllä"
+            },
+            {
+              "question": "751",
+              "answerString": "Ei"
+            },
+            {
+              "question": "751",
+              "answerString": "En tiedä"
+            }
+          ],
+          "required": true,
+          "repeats": false,
+          "option": [
+            {
+              "valueCoding": {
+                "id": "1343",
+                "display": "Ei koskaan"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1344",
+                "display": "Harvoin"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1345",
+                "display": "Usein"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1346",
+                "display": "Aina"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "767",
+          "text": "Kuinka paljon äkillisestä virtsaamistarpeesta on Teille haittaa?",
+          "type": "choice",
+          "enableWhen": [
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "750",
+              "answerString": "Mies"
+            },
+            {
+              "question": "766",
+              "answerString": "Harvoin"
+            },
+            {
+              "question": "766",
+              "answerString": "Usein"
+            },
+            {
+              "question": "766",
+              "answerString": "Aina"
+            }
+          ],
+          "required": true,
+          "repeats": false,
+          "option": [
+            {
+              "valueCoding": {
+                "id": "1347",
+                "display": "Ei lainkaan"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1348",
+                "display": "Vähän"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1349",
+                "display": "Kohtalaisesti"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1350",
+                "display": "Hyvin paljon"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "768",
+          "text": "Tuleeko virtsaamisen tarve niin voimakkaana, että virtsa karkaa ennen kuin ehditte WC:hen?",
+          "type": "choice",
+          "enableWhen": [
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "750",
+              "answerString": "Mies"
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "749",
+              "answerQuantity": {
+                "value": 14,
+                "comparator": ">"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "749",
+              "answerQuantity": {
+                "value": 101,
+                "comparator": "<"
+              }
+            },
+            {
+              "question": "751",
+              "answerString": "Kyllä"
+            },
+            {
+              "question": "751",
+              "answerString": "Ei"
+            },
+            {
+              "question": "751",
+              "answerString": "En tiedä"
+            }
+          ],
+          "required": true,
+          "repeats": false,
+          "option": [
+            {
+              "valueCoding": {
+                "id": "1351",
+                "display": "Ei koskaan"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1352",
+                "display": "Harvoin"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1353",
+                "display": "Usein"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1354",
+                "display": "Aina"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "769",
+          "text": "Kuinka paljon virtsankarkaamisesta on Teille haittaa?",
+          "type": "choice",
+          "enableWhen": [
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "750",
+              "answerString": "Mies"
+            },
+            {
+              "question": "768",
+              "answerString": "Harvoin"
+            },
+            {
+              "question": "768",
+              "answerString": "Usein"
+            },
+            {
+              "question": "768",
+              "answerString": "Aina"
+            }
+          ],
+          "required": true,
+          "repeats": false,
+          "option": [
+            {
+              "valueCoding": {
+                "id": "1355",
+                "display": "Ei lainkaan"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1356",
+                "display": "Vähän"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1357",
+                "display": "Kohtalaisesti"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1358",
+                "display": "Hyvin paljon"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "770",
+          "text": "Tuntuuko virtsatessa kipua tai poltetta?",
+          "type": "choice",
+          "enableWhen": [
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "750",
+              "answerString": "Mies"
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "749",
+              "answerQuantity": {
+                "value": 14,
+                "comparator": ">"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "749",
+              "answerQuantity": {
+                "value": 101,
+                "comparator": "<"
+              }
+            },
+            {
+              "question": "751",
+              "answerString": "Kyllä"
+            },
+            {
+              "question": "751",
+              "answerString": "Ei"
+            },
+            {
+              "question": "751",
+              "answerString": "En tiedä"
+            }
+          ],
+          "required": true,
+          "repeats": false,
+          "option": [
+            {
+              "valueCoding": {
+                "id": "1363",
+                "display": "Ei koskaan"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1364",
+                "display": "Harvoin"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1365",
+                "display": "Usein"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1366",
+                "display": "Aina"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "771",
+          "text": "Kuinka paljon virtsaamisen aikaisesta kivusta tai poltteesta on Teille haittaa?",
+          "type": "choice",
+          "enableWhen": [
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "750",
+              "answerString": "Mies"
+            },
+            {
+              "question": "770",
+              "answerString": "Harvoin"
+            },
+            {
+              "question": "770",
+              "answerString": "Usein"
+            },
+            {
+              "question": "770",
+              "answerString": "Aina"
+            }
+          ],
+          "required": true,
+          "repeats": false,
+          "option": [
+            {
+              "valueCoding": {
+                "id": "1359",
+                "display": "Ei lainkaan"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1360",
+                "display": "Vähän"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1361",
+                "display": "Kohtalaisesti"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1362",
+                "display": "Hyvin paljon"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "772",
+          "text": "Karkaako virtsaa fyysisen ponnistuksen aikana (esim. yskiessä, aivastaessa, nostaessanne jotain?)\n\n_Tämä kysymys ei koske jälkitippumista_",
+          "type": "choice",
+          "enableWhen": [
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "750",
+              "answerString": "Mies"
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "749",
+              "answerQuantity": {
+                "value": 14,
+                "comparator": ">"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "749",
+              "answerQuantity": {
+                "value": 101,
+                "comparator": "<"
+              }
+            },
+            {
+              "question": "751",
+              "answerString": "Kyllä"
+            },
+            {
+              "question": "751",
+              "answerString": "Ei"
+            },
+            {
+              "question": "751",
+              "answerString": "En tiedä"
+            }
+          ],
+          "required": true,
+          "repeats": false,
+          "option": [
+            {
+              "valueCoding": {
+                "id": "1367",
+                "display": "Ei koskaan"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1368",
+                "display": "Harvoin"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1369",
+                "display": "Usein"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1370",
+                "display": "Aina"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "773",
+          "text": "Kuinka paljon fyysisen ponnistuksen aiheuttamasta virtsan karkaamisesta on Teille haittaa?  \n    _Tämä kysymys ei koske jälkitippumista_",
+          "type": "choice",
+          "enableWhen": [
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "750",
+              "answerString": "Mies"
+            },
+            {
+              "question": "772",
+              "answerString": "Harvoin"
+            },
+            {
+              "question": "772",
+              "answerString": "Usein"
+            },
+            {
+              "question": "772",
+              "answerString": "Aina"
+            }
+          ],
+          "required": true,
+          "repeats": false,
+          "option": [
+            {
+              "valueCoding": {
+                "id": "1371",
+                "display": "Ei lainkaan"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1372",
+                "display": "Vähän"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1373",
+                "display": "Kohtalaisesti"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1374",
+                "display": "Hyvin paljon"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "774",
+          "text": "Karkaako virtsaa ilman fyysistä ponnistusta ja ilman virtsaustarvetta?\n\n_Tämä kysymys ei koske jälkitippumista_",
+          "type": "choice",
+          "enableWhen": [
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "750",
+              "answerString": "Mies"
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "749",
+              "answerQuantity": {
+                "value": 14,
+                "comparator": ">"
+              }
+            },
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "749",
+              "answerQuantity": {
+                "value": 101,
+                "comparator": "<"
+              }
+            },
+            {
+              "question": "751",
+              "answerString": "Kyllä"
+            },
+            {
+              "question": "751",
+              "answerString": "En tiedä"
+            },
+            {
+              "question": "751",
+              "answerString": "Ei"
+            }
+          ],
+          "required": true,
+          "repeats": false,
+          "option": [
+            {
+              "valueCoding": {
+                "id": "1375",
+                "display": "Ei koskaan"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1376",
+                "display": "Harvoin"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1377",
+                "display": "Usein"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1378",
+                "display": "Aina"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "775",
+          "text": "Kuinka paljon virtsan karkaamisesta ilman virtsaustarvetta ja fyysistä ponnistusta on Teille haittaa?  \n    _Tämä kysymys ei koske jälkitippumista_",
+          "type": "choice",
+          "enableWhen": [
+            {
+              "extension": [
+                {
+                  "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                  "valueString": "AND"
+                }
+              ],
+              "question": "750",
+              "answerString": "Mies"
+            },
+            {
+              "question": "774",
+              "answerString": "Harvoin"
+            },
+            {
+              "question": "774",
+              "answerString": "Usein"
+            },
+            {
+              "question": "774",
+              "answerString": "Aina"
+            }
+          ],
+          "required": true,
+          "repeats": false,
+          "option": [
+            {
+              "valueCoding": {
+                "id": "1379",
+                "display": "Ei lainkaan"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1380",
+                "display": "Vähän"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1381",
+                "display": "Kohtalaisesti"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "1382",
+                "display": "Hyvin paljon"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
